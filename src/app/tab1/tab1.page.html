@@ -7,11 +7,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <swiper style="height: 80%;
+  width: 90%;" #swiperRef [slidesPerView]="1" [direction]="'vertical'" [pagination]="{type: 'fraction'}"
+    [navigation]="true" [virtual]="true" class="mySwiper">
+    <ng-template swiperSlide *ngFor="let slide of slides; let i = index">
+      <div [ngStyle]="{ background: i % 2 == 0 ? 'red' : 'green' }"
+        style="flex-direction: column;height:100%; width:100%; display:flex; justify-content:center; align-items:center;">
+        <p>Name: {{ slide.name }}</p>
+        <p>Price: ${{slide.price}}</p>
+      </div>
+    </ng-template>
+  </swiper>
 </ion-content>
