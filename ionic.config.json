@@ -1,0 +1,7 @@
+{
+  "name": "sliderdemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
